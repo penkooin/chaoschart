@@ -1,0 +1,113 @@
+.chartContainer {
+    background-color: hsl(230, 63%, 76%);
+    border: 10px solid hsl(182, 71%, 60%);
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 20px;    
+    text-align: center;
+    display: inline-block;
+    transition: all 1.0s ease;
+}
+
+.chartContainer h1 {
+    font-size: 5rem;
+    color: hsl(200, 48%, 60%);
+}
+
+.chartContainer h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: hsl(200, 48%, 95%);
+}
+
+.chartCanvas {
+    padding: 5px;
+    border: 6px solid rgb(224, 242, 251);
+    border-radius: 30px;
+    /* transition: all 1.5s ease; */
+}
+
+.chartColorPicker {
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 1.0s ease;
+    display: none;
+}
+
+.chartTableContainer {
+    background-color: hsl(230, 63%, 76%);
+    border: 10px solid hsl(182, 71%, 60%);
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 20px;    
+    text-align: center;
+    display: flexbox;
+    transition: all 1.0s ease;
+}
+
+.chartTableContainer table {
+    padding: 10px;
+    background-color: hsl(180, 100%, 95%);
+    /* border: 10px solid rgb(255, 255, 255); */    
+    border-collapse:separate;
+    /* backdrop-filter: blur(10px); */
+    /* overflow-x: auto; */
+}
+
+.chartTableContainer th, td {
+    font-size: 1rem;    
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    /* border: 3px solid white; */
+    /* border-radius: 20px; */
+    position: sticky;
+    /* background-color: aliceblue; */
+}
+
+.chartTableContainer th {
+    /* border-radius: 20px; */
+    background-color: #a2d1e1; /* Background color for header */
+    font-weight: bold;  /* Make the header text bold */
+}
+
+.chartTableContainer td:first-child { 
+    /* border-radius: 20px;    */
+    background-color: #a2d1e1; /* Same background for first column cells */
+    font-weight: bold;
+}
+
+.chartTableContainer thead {
+    /* background-color: #abacc6; */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Hover effect for rows */
+.chartTableContainer tr:hover {
+    background-color: rgb(226, 247, 255);
+    cursor: pointer;
+}
+
+.chartButtons {
+    width: 160px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px;
+    color: aliceblue;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: hsl(197, 100%, 50%);
+}
+
+.chartButtons:hover {
+    background-color: hsl(197, 100%, 40%);
+}

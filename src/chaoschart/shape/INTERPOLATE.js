@@ -1,0 +1,10 @@
+
+const INTERPOLATE = Object.freeze({
+    LINEAR: 'LINEAR',
+    SPLINE: 'SPLINE',
+    LOESS: 'CATMULLROM',
+    DIVIDED_DIFFERENCE: 'DIVIDED_DIFFERENCE',
+    NEVILLE: 'NEVILLE'
+});
+
+export default INTERPOLATE;

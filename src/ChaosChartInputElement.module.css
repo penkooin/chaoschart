@@ -1,0 +1,44 @@
+
+
+.chartContainer {
+    background-color: hsl(120, 50%, 70%);
+    border: 6px solid hsl(180, 23%, 91%);
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 20px;    
+    text-align: center;
+    display: inline-block;
+    transition: all 1.5s ease;    
+}
+
+.inputContainer {
+    display:flex;
+    /* justify-content: space-around; */
+    background-color: hsl(120, 50%, 70%);
+    border: 6px solid hsl(180, 38%, 87%);
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 0.1);
+    padding: 10px;
+    margin: 10px;    
+    text-align: center;
+    align-content:start;
+}
+
+.inputContainer p {  
+    color: hsl(120, 30%, 30%);;  
+    font-size: 1.0rem;    
+    font-weight: bold;
+    margin: 10px
+}
+
+.inputContainer input {
+    width: 150px;
+    margin-left: 10px;
+}
+
+.inputContainer select {        
+    width: 150px;   
+    margin-left: 10px; 
+}
+
