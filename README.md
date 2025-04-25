@@ -1,70 +1,175 @@
-# Getting Started with Create React App
+<div align="center">
+    <img src="./docs/images/title.png" alt="ChaosChart Example" />
+</div>
+
+--- 
+
+<br/>
+ChaosChart is a **React-based charting library** designed to create dynamic, interactive, and visually appealing charts. It supports multiple chart types and provides extensive customization options, making it ideal for data visualization in modern web applications.
+<br/>
+<br/>
+
+<div align="center">
+    <img src="./docs/images/area-chart.png" width="600" alt="ChaosChart Example" />
+</div>
+
+---
+
+## ✨ Features
+
+- **Multiple Chart Types**: Bar, Line, Area, Circle, and Bar Ratio charts.
+- **Interactive Elements**: Modify chart values dynamically with mouse input.
+- **Customizable Styles**: Style charts easily using modular CSS.
+- **Color Picker Integration**: Interactively change colors for chart elements.
+- **Legend and Grid Support**: Enhanced readability with grid lines, axis labels, and legends.
+- **Export Options**: Save charts as image files.
+- **Peak Display**: Option to highlight peaks in data points.
+- **Data-Driven**: Fully configurable through structured JSON.
+
+---
+
+## 🚀 Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### ✅ Prerequisites
 
-In the project directory, you can run:
+Make sure you have the following installed:
 
-### `npm start`
+- **Node.js** (v14 or later)
+- **npm** (v6 or later)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📦 Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+git clone https://github.com/chaoschart/chaoschart.git
+cd chaoschart
+npm install
+npm start
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📄 Sample Usage
 
-### `npm run build`
+Here is an example from `index.js` for rendering two charts:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+import ChartConstants from './chaoschart/ChartConstants.js';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+import ChaosChart from './ChaosChart.jsx';
+import ChaosChartTable from './ChaosChartTable.jsx';
 
-### `npm run eject`
+import indexStyle from './index.module.css';
+import defaultStyle from './DefaultChartStyle.module.css';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+import json2 from './sample2.json';
+import json from './sample.json';
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const chartWidth = 800;
+const chartHeight = 400;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+root.render(
+  <React.StrictMode>
+    <div className={indexStyle.titleContainer}>
+      <p> ChaosChart React Library<br/> v0.0.1</p>
+      <p> ©️ All rights reserved by author Kooin Shin.</p>
+    </div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    <ChaosChart
+      type={ChartConstants.CHART.AREA}
+      width={chartWidth}
+      height={chartHeight}
+      config={json}
+      readOnly={false}
+      styles={defaultStyle}
+    />
 
-## Learn More
+    <ChaosChartTable
+      type={ChartConstants.CHART.LINE}
+      width={chartWidth}
+      height={chartHeight}
+      config={json2}
+      readOnly={false}
+      styles={defaultStyle}
+    />
+  </React.StrictMode>
+);
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📊 Sample Chart Data (JSON)
 
-### Code Splitting
+```json
+{
+  "TITLE": "Sample Chart",
+  "xIndex": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  "yIndex": [10, 20, 30, 40, 50, 60, 70, 80, 500],
+  "IS_SHOW_GRID_Y": false,
+  "IS_SHOW_GRID_X": false,
+  "indent_left": 0,
+  "INDENT_RIGHT": 0,
+  "INDENT_TOP": 0,
+  "INDENT_BOTTOM": 30,
+  "LIMIT": 900,
+  "LEGEND_FONT_SIZE": 8,
+  "IS_SHOW_PEAK": true,
+  "PEEK_STYLE": "RECTANGLE",
+  "elements": {
+    "kafka": {
+      "color": "rgb(130,180,130)",
+      "values": [44, 35, 0, 32, 0, 33, 29, 43, 25, 22, 32, 43]
+    },
+    "elk": {
+      "color": "rgb(180,130,130)",
+      "values": [150, 25, 10, 32, 0, 23, 52, 32, 32, 23, 54, 23]
+    },
+    "Oracle": {
+      "color": "rgb(180,180,140)",
+      "values": [500, 193, 0, 49, 444, 24, 93, 63, 92, 84, 69, 46]
+    },
+    "maria": {
+      "color": "rgb(150,150,150)",
+      "values": [300, 25, 0, 32, 0, 23, 9, 19, 32, 70, 93, 29]
+    },
+    "s3": {
+      "color": "rgb(150,200,158)",
+      "values": [20, 36, 0, 24, 22, 37, 33, 54, 23, 48, 53, 300]
+    }
+  }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+chaoschart/
+├── ChaosChart.jsx
+├── ChaosChartTable.jsx
+├── ChaosChartInputElement.jsx
+├── ChartConstants.js
+├── DefaultChartStyle.module.css
+├── index.module.css
+├── sample.json
+├── sample2.json
+└── ...
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧑‍💻 Author
 
-### Advanced Configuration
+- Kooin Shin
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 📜 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© All rights reserved by Kooin Shin. Please contact the author for licensing inquiries.

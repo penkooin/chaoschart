@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaosChart - React Charting Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #444;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+            color: #c7254e;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .divider {
+            margin: 20px 0;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+            <img src="./images/title.png" alt="ChaosChart Example">
+        </div>
+
+        <hr class="divider">
+
+        <p>ChaosChart is a <strong>React-based charting library</strong> designed to create dynamic, interactive, and
+            visually appealing charts. It supports multiple chart types and provides extensive customization options,
+            making it ideal for data visualization in modern web applications.</p>
+
+        <div class="center">
+            <img src="./images/area-chart.png" alt="ChaosChart Example">
+        </div>
+
+        <hr class="divider">
+
+        <h2>✨ Features</h2>
+        <ul>
+            <li><strong>Multiple Chart Types</strong>: Bar, Line, Area, Circle, and Bar Ratio charts.</li>
+            <li><strong>Interactive Elements</strong>: Modify chart values dynamically with mouse input.</li>
+            <li><strong>Customizable Styles</strong>: Style charts easily using modular CSS.</li>
+            <li><strong>Color Picker Integration</strong>: Interactively change colors for chart elements.</li>
+            <li><strong>Legend and Grid Support</strong>: Enhanced readability with grid lines, axis labels, and
+                legends.</li>
+            <li><strong>Export Options</strong>: Save charts as image files.</li>
+            <li><strong>Peak Display</strong>: Option to highlight peaks in data points.</li>
+            <li><strong>Data-Driven</strong>: Fully configurable through structured JSON.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h2>🚀 Getting Started</h2>
+        <p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app"
+                target="_blank">Create React App</a>.</p>
+
+        <h3>✅ Prerequisites</h3>
+        <ul>
+            <li><strong>Node.js</strong> (v14 or later)</li>
+            <li><strong>npm</strong> (v6 or later)</li>
+        </ul>
+
+        <h3>📦 Installation</h3>
+        <pre><code>git clone https://github.com/chaoschart/chaoschart.git
+cd chaoschart
+npm install
+npm start</code></pre>
+
+        <hr class="divider">
+
+        <h2>📄 Sample Usage</h2>
+        <pre><code>import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import ChartConstants from './chaoschart/ChartConstants.js';
+
+import ChaosChart from './ChaosChart.jsx';
+import ChaosChartTable from './ChaosChartTable.jsx';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <ChaosChart type={ChartConstants.CHART.AREA} />
+    <ChaosChartTable type={ChartConstants.CHART.LINE} />
+  </React.StrictMode>
+);</code></pre>
+
+        <hr class="divider">
+
+        <h2>📊 Sample Chart Data (JSON)</h2>
+        <pre><code>{
+  "TITLE": "Sample Chart",
+  "xIndex": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  "elements": {
+    "data1": { "color": "red", "values": [10, 20, 30, 40, 50, 60] },
+    "data2": { "color": "blue", "values": [15, 25, 35, 45, 55, 65] }
+  }
+}</code></pre>
+
+        <hr class="divider">
+
+        <h2>📁 Project Structure</h2>
+        <pre><code>chaoschart/
+├── ChaosChart.jsx
+├── ChaosChartTable.jsx
+├── ChartConstants.js
+├── DefaultChartStyle.module.css
+├── index.module.css
+├── sample.json
+└── sample2.json</code></pre>
+
+        <hr class="divider">
+
+        <h2>🧑‍💻 Author</h2>
+        <p>Kooin Shin</p>
+
+        <hr class="divider">
+
+        <h2>📜 License</h2>
+        <p>© All rights reserved by Kooin Shin. Please contact the author for licensing inquiries.</p>
+    </div>
+</body>
+
+</html>
